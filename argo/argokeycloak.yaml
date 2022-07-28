@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/princekhanna13/internshipvue.git
-    targetRevision: Hanc
+    repoURL: https://github.com/princekhanna13/internshipargo.git
+    targetRevision: vue
     path: keycloak
   destination:
     server: https://kubernetes.default.svc
