@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  namespace: internship
+  name: postgres
+  labels:
+    app: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres
+        ports:
+          - containerPort: 5432
+        env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                key:  db_pass
+                name: data-config
+          - name: POSTGRES_USER
+            valueFrom:
+              configMapKeyRef:
+                key:  db_user
+                name: data-config
+          - name: POSTGRES_DB
+            valueFrom:
+             configMapKeyRef:
+                key:  db_name
+                name: data-config

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: internship
+  name: data-config
+data:
+  db_url: postgres://postgres:password@postgres.postgres.svc.cluster.local:5435/postgres?sslmode=disable
+  db_pass: password
+  db_name: test
+  db_user: postgres

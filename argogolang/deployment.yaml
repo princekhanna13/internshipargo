@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internshipgolang
+  labels:
+    app: internshipgolang
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: internshipgolang
+  template:
+    metadata:
+      labels:
+        app: internshipgolang
+    spec:
+      containers:
+      - name: internshipgolang
+        image: amserdion/internshipgolang_devops
+        ports:
+          - containerPort: 8081
+          - containerPort: 8080
+        env:
+          - name: DATABASE_URL
+            valueFrom:
+              configMapKeyRef:
+                key:  db_url
+                name: data-config
+       
+       
