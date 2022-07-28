@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: internshipnode
+spec:
+  selector:
+    app: internshipnode
+  ports:
+  - port: 8000
+    targetPort: 8000

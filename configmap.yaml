@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  keycloak_admin: test
+  keycloak_password: admin 
+  keycloak_import: /realm-export-cloud.json
+  keycloak_url: http://localhost:8084
+  redis_url: localhost

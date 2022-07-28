@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: internshipnode
+  labels:
+    app: node 
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+      - name: node
+        image: bumbaruflaviusgabriel/internshipnode:latest
+        resources:
+          limits:
+            memory: "250Mi"
+            cpu: "250m"
+          requests:
+            memory: "150Mi"
+            cpu: "100m"
+        ports:
+          - containerPort: 8000
+        env:
+          - name: REDIS_HOST
+            valueFrom:
+              configMapKeyRef:
+                key: redis_url
+                name: configmap
+                
+          - name: KEYCLOAK_ADMIN
+            valueFrom:
+              configMapKeyRef:
+                key: keycloak_admin
+                name: configmap
+
+          - name: KEYCLOAK_ADMIN_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                key: keycloak_password
+                name: configmap
+
+          - name: KEYCLOAK_URL
+            valueFrom:
+              configMapKeyRef:
+                key: keycloak_url
+                name: configmap 
+
+          - name: KEYCLOAK_REALM_IMPORT
+            valueFrom:
+              configMapKeyRef:
+                key: keycloak_import
+                name: configmap 
