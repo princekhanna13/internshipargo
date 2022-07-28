@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "vue-deployment"
+  labels:
+    app: vue
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "vue"
+
+  template:
+    metadata:
+      labels:
+        app: "vue"
+
+    spec:
+      containers:
+      - name: "vue"
+        image: "melkor55/internshipvue:first"
+        resources:
+          limits:
+            memory: "250Mi"    
+            cpu: "250m"
+          requests:
+            memory: "150Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 3000
+        env:
+        - name: LOCALHOST
+          valueFrom:
+            configMapKeyRef:
+              key: localhost
+              name: vue-config
+        - name: VUE_APP_AXIOS_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              key: vue_app_axios_base_url
+              name: vue-config
+        - name: VUE_APP_KEYCLOAK_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: vue_app_keycloak_host
+              name: vue-config
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          failureThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 0
+          periodSeconds: 30

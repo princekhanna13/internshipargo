@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: "keycloak-deployment"
+  labels:
+    app: keycloak
+
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: "keycloak"
+
+  template: 
+    metadata: 
+      labels: 
+        app: "keycloak"
+
+    spec: 
+      containers: 
+      - name: "keycloak"
+        image: "melkor55/keycloak:latest"
+        resources:
+          limits:
+            memory: "250Mi"    
+            cpu: "250m"
+          requests:
+            memory: "150Mi"
+            cpu: "100m"
+        ports: 
+        - containerPort: 8100
+        env: 
+        - name: KEYCLOAK_ADMIN
+          valueFrom: 
+            configMapKeyRef:
+              key: keycloak_admin
+              name: keycloak-config  
+        - name: KEYCLOAK_ADMIN_PASSWORD
+          valueFrom: 
+            configMapKeyRef:
+              key: keycloak_admin_password
+              name: keycloak-config  
+        - name: KEYCLOAK_IMPORT
+          valueFrom: 
+            configMapKeyRef:
+              key: keycloak_import
+              name: keycloak-config
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8100
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          failureThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8100
+          initialDelaySeconds: 0
+          periodSeconds: 30                 
