@@ -29,32 +29,8 @@ spec:
         ports:
           - containerPort: 8000
         env:
-          - name: REDIS_HOST
+          - name: REDIS_HOST_URL
             valueFrom:
               configMapKeyRef:
                 key: redis_url
-                name: configmap
-                
-          - name: KEYCLOAK_ADMIN
-            valueFrom:
-              configMapKeyRef:
-                key: keycloak_admin
-                name: configmap
-
-          - name: KEYCLOAK_ADMIN_PASSWORD
-            valueFrom:
-              configMapKeyRef:
-                key: keycloak_password
-                name: configmap
-
-          - name: KEYCLOAK_URL
-            valueFrom:
-              configMapKeyRef:
-                key: keycloak_url
-                name: configmap 
-
-          - name: KEYCLOAK_REALM_IMPORT
-            valueFrom:
-              configMapKeyRef:
-                key: keycloak_import
-                name: configmap 
+                name: redis-configmap
