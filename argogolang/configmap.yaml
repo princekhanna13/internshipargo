@@ -7,3 +7,4 @@ data:
   db_pass: password
   db_name: test
   db_user: postgres
+  
