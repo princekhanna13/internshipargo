@@ -10,7 +10,7 @@ spec:
     path: argogolang
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: internship
   syncPolicy: 
     syncOptions:
       - CreateNamespace=true
