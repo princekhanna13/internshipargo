@@ -26,5 +26,15 @@ spec:
               configMapKeyRef:
                 key:  db_url
                 name: data-config
-       
+          - name: SUPERADMIN_EMAIL
+            valueFrom:
+              configMapKeyRef:
+                key:  mail
+                name: data-config 
+                
+          - name: SUPERADMIN_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                key:  password
+                name: data-config
        
