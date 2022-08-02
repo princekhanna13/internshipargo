@@ -19,16 +19,18 @@ spec:
     spec: 
       containers: 
       - name: "keycloak"
-        image: "melkor55/keycloak:latest"
-        resources:
-          limits:
-            memory: "250Mi"    
-            cpu: "250m"
-          requests:
-            memory: "150Mi"
-            cpu: "100m"
+        image: quay.io/keycloak/keycloak:18.0.2
+        #imagePullPolicy: Always
+        command: ["/bin/sh", "-c"]
+        args: 
+          - "
+            cd ;
+            echo 'http-port=8100' >> ./conf/keycloak.conf ; 
+            /opt/keycloak/bin/kc.sh start-dev --import-realm
+            "
         ports: 
-        - containerPort: 8100
+        - name: http
+          containerPort: 8100
         env: 
         - name: KEYCLOAK_ADMIN
           valueFrom: 
@@ -39,9 +41,4 @@ spec:
           valueFrom: 
             configMapKeyRef:
               key: keycloak_admin_password
-              name: keycloak-config  
-        - name: KEYCLOAK_IMPORT
-          valueFrom: 
-            configMapKeyRef:
-              key: keycloak_import
-              name: keycloak-config               
+              name: keycloak-config        
