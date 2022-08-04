@@ -17,7 +17,6 @@ spec:
       containers:
         - name: internshipgolang
           image: amserdion/internshipgolang_devops
-          tag: dev-0.115
           ports:
             - containerPort: 8081
             - containerPort: 8080
