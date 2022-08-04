@@ -1,11 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   name: internshipnode
   labels:
-    app: node 
-
+    app: node
 spec:
   replicas: 3
   selector:
@@ -17,20 +15,20 @@ spec:
         app: node
     spec:
       containers:
-      - name: node
-        image: bumbaruflaviusgabriel/internshipnode:latest
-        resources:
-          limits:
-            memory: "250Mi"
-            cpu: "250m"
-          requests:
-            memory: "150Mi"
-            cpu: "100m"
-        ports:
-          - containerPort: 8000
-        env:
-          - name: REDIS_HOST_URL
-            valueFrom:
-              configMapKeyRef:
-                key: redis_url
-                name: redis-configmap
+        - name: node
+          image: bumbaruflaviusgabriel/internshipnode:dev-0.115
+          resources:
+            limits:
+              memory: "250Mi"
+              cpu: "250m"
+            requests:
+              memory: "150Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_HOST_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: redis_url
+                  name: redis-configmap
