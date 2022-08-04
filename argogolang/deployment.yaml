@@ -15,27 +15,25 @@ spec:
         app: internshipgolang
     spec:
       containers:
-      - name: internshipgolang
-        image: amserdion/internshipgolang_devops
-        tag: latest
-        ports:
-          - containerPort: 8081
-          - containerPort: 8080
-        env:
-          - name: DATABASE_URL
-            valueFrom:
-              configMapKeyRef:
-                key:  db_url
-                name: data-config
-          - name: SUPERADMIN_EMAIL
-            valueFrom:
-              configMapKeyRef:
-                key:  mail
-                name: data-config 
-                
-          - name: SUPERADMIN_PASSWORD
-            valueFrom:
-              configMapKeyRef:
-                key:  password
-                name: data-config
-       
+        - name: internshipgolang
+          image: amserdion/internshipgolang_devops
+          tag: dev-0.115
+          ports:
+            - containerPort: 8081
+            - containerPort: 8080
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: db_url
+                  name: data-config
+            - name: SUPERADMIN_EMAIL
+              valueFrom:
+                configMapKeyRef:
+                  key: mail
+                  name: data-config
+            - name: SUPERADMIN_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: password
+                  name: data-config
