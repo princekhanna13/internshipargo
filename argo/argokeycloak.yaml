@@ -11,7 +11,7 @@ spec:
     path: keycloak
   destination:
     server: https://kubernetes.default.svc
-    namespace: argovueyaml
+    namespace: argokeycloakyaml
   syncPolicy:
     automated:
       prune: true
