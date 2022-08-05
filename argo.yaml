@@ -7,11 +7,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/princekhanna13/internshipargo.git
-    targetRevision: vue
+    targetRevision: develop
     path: argo
   destination:
     server: https://kubernetes.default.svc
-    namespace: argovueyaml
+    namespace: argoyaml
 
   syncPolicy:
     syncOptions:
