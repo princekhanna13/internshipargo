@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-config
+data:
+  keycloak_admin: admin2 
+  keycloak_admin_password: admin
+  keycloak_import: ./utils/realm-export-cloud.json
