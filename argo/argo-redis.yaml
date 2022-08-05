@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-argo
+  name: argo-redis
   namespace: argocd
 spec:
-  project: default
+  project: default 
   source:
     repoURL: https://github.com/princekhanna13/internshipargo.git
-    targetRevision: vue
-    path: argo
+    targetRevision: node
+    path: redis
   destination:
     server: https://kubernetes.default.svc
-    namespace: argovueyaml
-
+    namespace: argonode
+  
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
