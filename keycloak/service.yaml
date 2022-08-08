@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: "keycloak-service"
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: keycloak    
   ports:
