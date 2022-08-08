@@ -11,7 +11,7 @@ spec:
     path: postgres
   destination:
     server: https://kubernetes.default.svc
-    namespace: argopostgresyaml
+    namespace: golang
   syncPolicy:
     automated:
       prune: true
