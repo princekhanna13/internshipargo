@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: "vue-service"
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: vue    
   ports:
