@@ -11,7 +11,7 @@ spec:
     path: golang
   destination:
     server: https://kubernetes.default.svc
-    namespace: argogolangyaml
+    namespace: golang
   syncPolicy:
     automated:
       prune: true

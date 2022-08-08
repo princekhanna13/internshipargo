@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: data-config
+  name: data-configx
 data:
   db_url: postgres://postgres:password@postgres.postgres.svc.cluster.local:5435/test?sslmode=disable
   db_pass: password
