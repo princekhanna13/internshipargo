@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/princekhanna13/internshipargo.git
     targetRevision: test
-    path: argo
+    path: argo/.
   destination:
     server: https://kubernetes.default.svc
     namespace: argo
