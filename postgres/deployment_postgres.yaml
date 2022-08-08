@@ -25,7 +25,7 @@ spec:
             valueFrom:
               configMapKeyRef:
                 key:  db_pass
-                name: data-config
+                name: data-configx
           - name: POSTGRES_USER
             valueFrom:
               configMapKeyRef:
