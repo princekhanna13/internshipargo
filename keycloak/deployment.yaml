@@ -25,12 +25,12 @@ spec:
         args: 
           - "
             cd ;
-            echo 'http-port=8100' >> ./conf/keycloak.conf ; 
+            echo 'http-port=8082' >> ./conf/keycloak.conf ; 
             /opt/keycloak/bin/kc.sh start-dev --import-realm
             "
         ports: 
         - name: http
-          containerPort: 8100
+          containerPort: 8082
         env: 
         - name: KEYCLOAK_ADMIN
           valueFrom: 
