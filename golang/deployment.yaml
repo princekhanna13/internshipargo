@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: internshipgolang
+  name: golang
   labels:
-    app: internshipgolang
+    app: golang
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: internshipgolang
+      app: golang
   template:
     metadata:
       labels:
-        app: internshipgolang
+        app: golang
     spec:
       containers:
-        - name: internshipgolang
+        - name: golang
           image: amserdion/internshipgolang:sha-c76067f
           ports:
             - containerPort: 8081
