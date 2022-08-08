@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: internshipnode
 spec:
+  type: LoadBalancer
   selector:
     app: internshipnode
   ports:

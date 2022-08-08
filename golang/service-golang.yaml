@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: golang
 spec:
+  type: LoadBalancer
   selector:
     app: golang
   ports:
