@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: data-config
 data:
-  db_url: postgres://postgres:mysecretpassword@localhost:5432/test?sslmode=disable
+  db_url: postgres://postgres:mysecretpassword@localhost:5432/postgres?sslmode=disable
   db_pass: password
-  db_name: test
+  db_name: postgres
   db_user: postgres
   mail: admin@atoss.com
   password: adminpassword
