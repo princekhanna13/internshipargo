@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: redis
 spec:
+  type: LoadBalancer
   clusterIP: None
   selector:
     app: redis
