@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: redis-configmap
 data:
-  redis_url: localhost
+  redis_url: redis.argonode.svc.cluster.local

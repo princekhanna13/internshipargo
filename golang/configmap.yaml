@@ -4,8 +4,5 @@ metadata:
   name: data-configx
 data:
   db_url: postgres://postgres:password@postgres.golang.svc.cluster.local:5435/test?sslmode=disable
-  db_pass: password
-  db_name: test
-  db_user: postgres
   mail: admin@atoss.com
   password: adminpassword
