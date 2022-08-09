@@ -22,8 +22,8 @@ spec:
         image: melkor55/internshipvue:sha-9992c26
         resources:
           limits:
-            memory: "250Mi"    
-            cpu: "250m"
+            memory: "500Mi"
+            cpu: "500m"
           requests:
             memory: "150Mi"
             cpu: "100m"
