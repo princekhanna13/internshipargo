@@ -27,8 +27,10 @@ spec:
           ports:
             - containerPort: 8000
           env:
-            - name: REDIS_HOST_URL
+            - name: REDIS_HOST
               valueFrom:
                 configMapKeyRef:
                   key: redis_url
                   name: redis-configmap
+            - name: KEYCLOAK_HOST
+              value: keycloak-service.argokeycloakyaml.svc.cluster.local
