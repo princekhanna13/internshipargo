@@ -4,6 +4,6 @@ metadata:
   name: vue-config
 data:
   localhost: localhost
-  vue_app_axios_base_url: internshipnode.argonode.svc.cluster.local:8000
+  vue_app_axios_base_url: http://host.docker.internal:8000
   #vue_app_keycloak_host: https://appdev.atoss.com/clusterkeycloak
   vue_app_keycloak_host: http://localhost:8082
