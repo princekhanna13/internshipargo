@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: internshipnode
   labels:
-    app: node
+    app: internshipnode
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: node
+      app: internshipnode
   template:
     metadata:
       labels:
-        app: node
+        app: internshipnode
     spec:
       containers:
         - name: node
