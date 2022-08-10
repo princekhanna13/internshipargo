@@ -26,6 +26,8 @@ spec:
                 configMapKeyRef:
                   key: db_url
                   name: data-configx
+            - name: DATABASE_LOGMODE
+              value: "true"
             - name: SUPERADMIN_EMAIL
               valueFrom:
                 configMapKeyRef:
