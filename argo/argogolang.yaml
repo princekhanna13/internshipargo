@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-golang
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/princekhanna13/internshipargo.git
+    targetRevision: develop
+    path: golang
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: golang
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

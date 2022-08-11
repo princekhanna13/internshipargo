@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-configx
+data:
+  db_url: postgres://postgres:password@postgres.golang.svc.cluster.local:5435/test?sslmode=disable
+  mail: admin@atoss.com
+  password: adminpassword

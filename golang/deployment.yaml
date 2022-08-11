@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang
+  labels:
+    app: golang
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: golang
+  template:
+    metadata:
+      labels:
+        app: golang
+    spec:
+      containers:
+        - name: golang
+          image: amserdion/internshipgolang:sha-8ef5639
+          ports:
+            - containerPort: 8081
+            - containerPort: 8080
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: db_url
+                  name: data-configx
+            - name: DATABASE_LOGMODE
+              value: "true"
+            - name: SUPERADMIN_EMAIL
+              valueFrom:
+                configMapKeyRef:
+                  key: mail
+                  name: data-configx
+            - name: SUPERADMIN_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: password
+                  name: data-configx

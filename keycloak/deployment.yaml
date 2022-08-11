@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: "keycloak-deployment"
+  labels:
+    app: keycloak
+
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: "keycloak"
+
+  template: 
+    metadata: 
+      labels: 
+        app: "keycloak"
+
+    spec: 
+      containers: 
+      - name: "keycloak"
+        image: quay.io/keycloak/keycloak:18.0.2
+        #imagePullPolicy: Always
+        command: ["/bin/sh", "-c"]
+        args: 
+          - "
+            cd ;
+            echo 'http-port=8082' >> ./conf/keycloak.conf ; 
+            /opt/keycloak/bin/kc.sh start-dev --import-realm
+            "
+        ports: 
+        - name: http
+          containerPort: 8082
+        env: 
+        - name: KEYCLOAK_ADMIN
+          valueFrom: 
+            configMapKeyRef:
+              key: keycloak_admin
+              name: keycloak-config  
+        - name: KEYCLOAK_ADMIN_PASSWORD
+          valueFrom: 
+            configMapKeyRef:
+              key: keycloak_admin_password
+              name: keycloak-config        

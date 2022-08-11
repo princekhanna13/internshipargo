@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internshipnode
+  labels:
+    app: internshipnode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: internshipnode
+  template:
+    metadata:
+      labels:
+        app: internshipnode
+    spec:
+      containers:
+        - name: node
+          image: bumbaruflaviusgabriel/internshipnode:sha-fbd4579
+          resources:
+            limits:
+              memory: "250Mi"
+              cpu: "250m"
+            requests:
+              memory: "150Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: redis_url
+                  name: redis-configmap
+            - name: KEYCLOAK_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: keycloak_host
+                  name: redis-configmap
