@@ -11,7 +11,7 @@ spec:
     path: redis
   destination:
     server: https://kubernetes.default.svc
-    namespace: argonode
+    namespace: node
   
   syncPolicy:
     syncOptions:

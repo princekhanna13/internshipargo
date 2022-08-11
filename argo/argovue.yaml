@@ -11,7 +11,7 @@ spec:
     path: vue
   destination:
     server: https://kubernetes.default.svc
-    namespace: argovueyaml
+    namespace: vue
   syncPolicy:
     automated:
       prune: true

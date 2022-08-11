@@ -11,7 +11,7 @@ spec:
     path: keycloak
   destination:
     server: https://kubernetes.default.svc
-    namespace: argokeycloakyaml
+    namespace: keycloak #maybe add it to vue namespace
   syncPolicy:
     automated:
       prune: true
