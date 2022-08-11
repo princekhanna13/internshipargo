@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/princekhanna13/internshipargo.git
-    targetRevision: develop
+    targetRevision: main
     path: vue
   destination:
     server: https://kubernetes.default.svc
