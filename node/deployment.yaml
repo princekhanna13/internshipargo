@@ -33,4 +33,7 @@ spec:
                   key: redis_url
                   name: redis-configmap
             - name: KEYCLOAK_HOST
-              value: keycloak-service.argokeycloakyaml.svc.cluster.local
+              valueFrom:
+                configMapKeyRef:
+                  key: keycloak_host
+                  name: redis-configmap
