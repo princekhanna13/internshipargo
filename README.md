@@ -23,6 +23,12 @@
 
 - ``kubectl describe configmaps argocd-cm -n argocd``
 
+##  before log in
+
+### a port forward is needed
+
+- ``kubectl port-forward svc/argocd-server -n argocd ```YOUR_DESIRED_PORT```:443``
+
 
 ## log in 
 
