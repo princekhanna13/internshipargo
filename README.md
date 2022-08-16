@@ -28,4 +28,5 @@
 
 ### get the password using the following command and the username will be ```admin```
 
-- ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo``
+- ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo``   -> for unix systems(I think)
+- ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"``   ->  for windows
