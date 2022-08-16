@@ -23,9 +23,16 @@
 
 - ``kubectl describe configmaps argocd-cm -n argocd``
 
+##  before log in
+
+### a port forward is needed
+
+- ``kubectl port-forward svc/argocd-server -n argocd **YOUR_DESIRED_PORT**:443``
+
 
 ## log in 
 
 ### get the password using the following command and the username will be ```admin```
 
-- ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo``
+- ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo``   -> for unix systems(I think)
+- ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"``   ->  for windows
