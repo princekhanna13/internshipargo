@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: redis-configmap
 data:
-  redis_url: redis.argonode.svc.cluster.local
-  keycloak_host: keycloak-service.argokeycloakyaml.svc.cluster.local
+  redis_url: redis.node.svc.cluster.local
+  keycloak_host: keycloak-service.keycloak.svc.cluster.local
