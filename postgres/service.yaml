@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: postgres
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: postgres
   ports:
