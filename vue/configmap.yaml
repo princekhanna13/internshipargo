@@ -6,4 +6,4 @@ data:
   localhost: localhost
   vue_app_axios_base_url: http://internshipnode.node.svc.cluster.local:8000
   #vue_app_keycloak_host: https://appdev.atoss.com/clusterkeycloak
-  vue_app_keycloak_host: http://localhost:8082
+  vue_app_keycloak_host: http://keycloak-service.keycloak.svc.cluster.local:8082
