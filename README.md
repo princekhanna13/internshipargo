@@ -27,7 +27,7 @@
 
 ### a port forward is needed
 
-- ``kubectl port-forward svc/argocd-server -n argocd ```YOUR_DESIRED_PORT```:443``
+- ``kubectl port-forward svc/argocd-server -n argocd **YOUR_DESIRED_PORT**:443``
 
 
 ## log in 
