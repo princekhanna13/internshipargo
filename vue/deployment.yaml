@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: "vue"
-        image: melkor55/internshipvue:sha-6d6d8d7
+        image: melkor55/internshipvue:sha-319a52b
         resources:
           limits:
             memory: "500Mi"
