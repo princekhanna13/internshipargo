@@ -4,7 +4,7 @@
 
 ### run the following commands :
 
-- ``kubectl create namespace argocd   ->  create the namespace for argocd``
+- ``kubectl create namespace argocd``   ->  create the namespace for argocd
 - ``kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml``     ->  install argocd from the repository on argocd ns
 
 
