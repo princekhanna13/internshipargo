@@ -30,11 +30,6 @@ spec:
         ports:
         - containerPort: 3000
         env:
-        - name: LOCALHOST
-          valueFrom:
-            configMapKeyRef:
-              key: localhost
-              name: vue-config
         - name: VUE_APP_AXIOS_BASE_URL
           valueFrom:
             configMapKeyRef:
@@ -45,3 +40,12 @@ spec:
             configMapKeyRef:
               key: vue_app_keycloak_host
               name: vue-config
+
+        - name: VUE_APP_REDIRECT_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: vue_app_redirect_host
+              name: vue-config
+
+        - name: VUE_APP_PORT
+          value: "3000"

@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: postgres
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: postgres
   ports:
-  - port: 5435
+  - port: 5432
     targetPort: 5432

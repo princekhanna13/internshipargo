@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: internshipnode
+  name: node
   labels:
-    app: internshipnode
+    app: node
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: internshipnode
+      app: node
   template:
     metadata:
       labels:
-        app: internshipnode
+        app: node
     spec:
       containers:
         - name: node
@@ -36,4 +36,11 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   key: keycloak_host
+                  name: redis-configmap
+            - name: PORT
+              value: "8000"
+            - name: GOLANG_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: golang_host
                   name: redis-configmap
