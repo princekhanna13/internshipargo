@@ -4,4 +4,4 @@ metadata:
   name: redis-configmap
 data:
   redis_url: http://redis.node.svc.cluster.local:6379
-  keycloak_host:  http://localhost:8082
+  keycloak_host:  http://keycloak-service.keycloak.svc.cluster.local:8082
