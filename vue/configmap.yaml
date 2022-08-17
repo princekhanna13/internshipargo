@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: vue-config
 data:
-  vue_app_axios_base_url: http://node-service.node.svc.cluster.local
+  vue_app_axios_base_url: http://localhost:8000
   #vue_app_keycloak_host: https://appdev.atoss.com/clusterkeycloak
   vue_app_keycloak_host: http://localhost:8082
   vue_app_redirect_host: http://localhost
