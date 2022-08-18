@@ -36,7 +36,7 @@
 
 - ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo``   -> for unix systems(I think)
 - ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"``   ->  for windows
-  ### then the password needs to be decoded 
+  ### then the password needs to be decoded from base64 fromat
   
 ## after log in
 
