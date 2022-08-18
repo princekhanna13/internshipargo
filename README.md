@@ -36,3 +36,13 @@
 
 - ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo``   -> for unix systems(I think)
 - ``kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"``   ->  for windows
+  ### then the password needs to be decoded 
+  
+## after log in
+
+### you need to port-forward the vue, keycloak and node app
+
+- ``kubectl port-forward svc/keycloak-service -n keycloak 8082:8082``
+- ``kubectl port-forward svc/node-service -n node 8000:8000``
+- ``kubectl port-forward svc/vue-service -n vue 3000:3000``
+
