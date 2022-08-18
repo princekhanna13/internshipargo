@@ -4,5 +4,5 @@ metadata:
   name: redis-configmap
 data:
   redis_url: redis.node.svc.cluster.local
-  keycloak_host:  http://localhost:8082
+  keycloak_host:  http://keycloak-service.keycloak.svc.cluster.local:8082
   golang_host: http://golang-service.golang.svc.cluster.local:8081
