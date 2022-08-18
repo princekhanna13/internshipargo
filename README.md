@@ -8,11 +8,9 @@
 - ``kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml``     ->  install argocd from the repository on argocd ns
 
 
-- ``kubectl create -f argo.yaml``   ->    create the main application
-
 - ``kubectl apply -f argocd-cm.yaml``    ->    change the configmap for argocd ( in this case to lower the auto-sync time )
 
-- ``kubectl -n argocd rollout restart deploy argocd-repo-server``     ->    the server needs to be restarded after the changes are made
+- ``kubectl create -f argo.yaml``   ->    create the main application
 
 
 ### to test the auto-sync time use :
