@@ -20,13 +20,6 @@ spec:
       containers:
       - name: "vue"
         image: melkor55/internshipvue:sha-cbd72c0
-        resources:
-          limits:
-            memory: "500Mi"
-            cpu: "500m"
-          requests:
-            memory: "150Mi"
-            cpu: "100m"
         ports:
         - containerPort: 3000
         env:
