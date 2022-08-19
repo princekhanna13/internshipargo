@@ -44,3 +44,12 @@
 - ``kubectl port-forward svc/node-service -n node 8000:8000``
 - ``kubectl port-forward svc/vue-service -n vue 3000:3000``
 
+
+##  for the app to work completly there are a few settings that need to be done in keycloak
+
+- go to ``localhost:8082`` and log in with user:``admin2`` and pass:``admin`` 
+- add each real from ``./internshipargo/keycloak_realms/`` (one by one)
+- then add a user in one of the realms with atributes: ``number`` and role mapinngs:```**company_ID**``` -> ``admin`` (company_ID will be replaced with the company name coresponding to the realm <<for example: lufthansaID>>)
+
+
+## the app starts on ``localhost:3000``
