@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node
-          image: bumbaruflaviusgabriel/internshipnode:sha-bf3130d
+          image: bumbaruflaviusgabriel/internshipnode:sha-5b9f230
           resources:
             limits:
               memory: "250Mi"
