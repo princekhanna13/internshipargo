@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: golang
-          image: amserdion/internshipgolang:sha-5167fd4
+          image: amserdion/internshipgolang:sha-5737a60
           ports:
             - containerPort: 8081
             - containerPort: 8080
