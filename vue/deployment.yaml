@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: "vue"
-        image: melkor55/internshipvue:sha-65bb9a9
+        image: melkor55/internshipvue:sha-2a853d1
         ports:
         - containerPort: 3000
         env:
